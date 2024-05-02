@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2624760c2371db742833f9b7b7f9f8ae
+timeCreated: 1460110334
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 63740
+  packageName: Boxes
+  packageVersion: 1.0
+  assetPath: Assets/Objects/Boxes and pallets/Box_labeled.prefab
+  uploadId: 121447

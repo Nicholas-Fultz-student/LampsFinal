@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 76938fc3a3cf3584cad29f234e5227ac
+timeCreated: 1460110869
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 63740
+  packageName: Boxes
+  packageVersion: 1.0
+  assetPath: Assets/Objects/Boxes and pallets/SmallBox.prefab
+  uploadId: 121447
