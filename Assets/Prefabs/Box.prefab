@@ -1,5 +1,58 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8280141359850556730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3810008560821619445}
+  - component: {fileID: 170747283108597057}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3810008560821619445
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8280141359850556730}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.00000011920929, y: 0.000000029802322, z: 0.08855425, w: 0.9960714}
+  m_LocalPosition: {x: 0.008, y: 0.006, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8871363986901733981}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 10.161}
+--- !u!65 &170747283108597057
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8280141359850556730}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.27038473, y: 0.3379135, z: 0.23811553}
+  m_Center: {x: -0.13517678, y: 0.21120436, z: 0.119046696}
 --- !u!1001 &8871363986902096787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -103,11 +156,11 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6499206, guid: 2624760c2371db742833f9b7b7f9f8ae, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 199288, guid: 2624760c2371db742833f9b7b7f9f8ae, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 428494, guid: 2624760c2371db742833f9b7b7f9f8ae, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1377303088558937713}
+      addedObject: {fileID: 3810008560821619445}
+    m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 199288, guid: 2624760c2371db742833f9b7b7f9f8ae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5412014776757277722}
@@ -118,32 +171,16 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 5565620349807688449}
   m_SourcePrefab: {fileID: 100100000, guid: 2624760c2371db742833f9b7b7f9f8ae, type: 3}
+--- !u!4 &8871363986901733981 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 428494, guid: 2624760c2371db742833f9b7b7f9f8ae, type: 3}
+  m_PrefabInstance: {fileID: 8871363986902096787}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8871363986902028779 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 199288, guid: 2624760c2371db742833f9b7b7f9f8ae, type: 3}
   m_PrefabInstance: {fileID: 8871363986902096787}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1377303088558937713
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8871363986902028779}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.3241466, y: 0.3801735, z: 0.23811552}
-  m_Center: {x: -0.16206256, y: 0.19007622, z: 0.11904699}
 --- !u!114 &5412014776757277722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,7 +205,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 16
+          m_FloatArgument: 12
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
