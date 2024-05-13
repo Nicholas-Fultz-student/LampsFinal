@@ -22,7 +22,7 @@ public class InputHandler : MonoBehaviour
     {
         HandleCameraInput();
         HandleMoveInput();
-        HandleInteractionInput();
+        HandlePushInput();
     }
 
     void HandleCameraInput()
@@ -39,7 +39,7 @@ public class InputHandler : MonoBehaviour
         characterMovement.AddMoveInput(forwardInput, rightInput);
     }
 
-    void HandleInteractionInput()
+    void HandlePushInput()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
