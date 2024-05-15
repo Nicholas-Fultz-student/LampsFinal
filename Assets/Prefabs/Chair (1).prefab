@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4187a35dc80cb7b4bb0a1b7973b9eeb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionText: E to Push
+  interactionText: E to Knock Over
   OnInteract:
     m_PersistentCalls:
       m_Calls:
