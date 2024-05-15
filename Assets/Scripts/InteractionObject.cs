@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class InteractionObject : MonoBehaviour
 {
-    [SerializeField]private string interactionText = "I'm an interactable object!";
+    [SerializeField]string interactionText = " ";
 
     public UnityEvent OnInteract = new UnityEvent();
 
