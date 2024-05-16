@@ -5,27 +5,25 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Projectile : MonoBehaviour
 {
-    public GameObject explosionPrefab;
     public Rigidbody rigidbody;
     public float forceAmount = 15.0f;
+    public float destroyDelay = 3.0f; // Time delay before destroying the projectile
+
+    private Vector3 shootDirection;
+
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
-        Vector3 forceDirection = transform.forward;
+        rigidbody.AddForce(shootDirection * forceAmount, ForceMode.VelocityChange);
 
-        rigidbody.AddForce(forceDirection * forceAmount, ForceMode.VelocityChange);
+        // Destroy the projectile after a certain delay
+        Destroy(gameObject, destroyDelay);
     }
 
-    // Update is called once per frame
-    void Update()
+    // Set the shooting direction
+    public void SetShootDirection(Vector3 direction)
     {
-        
-    }
-
-     void OnCollisionEnter(Collision other)
-    {
-
-        
+        shootDirection = direction.normalized;
     }
 }
