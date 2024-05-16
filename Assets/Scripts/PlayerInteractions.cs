@@ -1,40 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerInteractions : MonoBehaviour
 {
-    [SerializeField]private float maxDistance = 2f;
+    [SerializeField] private float maxDistance = 2f;
     [SerializeField] private Text interactableName;
-
- 
+    [SerializeField] private float textUpdateDelay = 0.1f; // Adjust as needed
 
     private InteractionObject targetInteraction;
-    // Start is called before the first frame update
+    private string pendingInteractionText = "";
 
-    // Update is called once per frame 
     void Update()
     {
         Vector3 origin = Camera.main.transform.position;
         Vector3 direction = Camera.main.transform.forward;
-        RaycastHit raycastHit = new RaycastHit();
-        string interactionText = "";
-        targetInteraction = null;
+        RaycastHit raycastHit;
 
-        if(Physics.Raycast(origin, direction, out raycastHit, maxDistance))
+        if (Physics.Raycast(origin, direction, out raycastHit, maxDistance))
         {
-            targetInteraction = raycastHit.collider.gameObject.GetComponent<InteractionObject>();
-            
+            InteractionObject newTargetInteraction = raycastHit.collider.gameObject.GetComponent<InteractionObject>();
+
+            if (newTargetInteraction && newTargetInteraction.enabled)
+            {
+                // Check if the distance to the interaction object is within range
+                float distanceToTarget = Vector3.Distance(transform.position, newTargetInteraction.transform.position);
+                if (distanceToTarget <= maxDistance)
+                {
+                    targetInteraction = newTargetInteraction;
+                    pendingInteractionText = targetInteraction.GetInteractionText(); // Update pending text
+                    Invoke("UpdateInteractableNameText", textUpdateDelay); // Delay the text update
+                    return; // Exit early
+                }
+            }
         }
 
-        if(targetInteraction && targetInteraction.enabled)
-        {
-            interactionText = targetInteraction.GetInteractionText();
-        }
+        // No valid interaction object found or out of range, set text to empty string immediately
+        SetInteractableNameText("");
+    }
 
-
-        SetInteractableNameText(interactionText);
+    private void UpdateInteractableNameText()
+    {
+        SetInteractableNameText(pendingInteractionText);
     }
 
     private void SetInteractableNameText(string newText)
@@ -49,8 +55,12 @@ public class PlayerInteractions : MonoBehaviour
     {
         if (targetInteraction && targetInteraction.enabled)
         {
-            targetInteraction.Interact();
+            // Check if the distance to the interaction object is within range
+            float distanceToTarget = Vector3.Distance(transform.position, targetInteraction.transform.position);
+            if (distanceToTarget <= maxDistance)
+            {
+                targetInteraction.Interact();
+            }
         }
-
     }
 }
